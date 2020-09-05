@@ -38,10 +38,12 @@ public class SleepyHead {
 
 		boolean passedExam;
 		// Write code to ask the user what percentage they scored in their last exam
-		String lol = JOptionPane.showInputDialog(null, "What percentage did you get in your last exam?");
-		
+		String percent = JOptionPane.showInputDialog(null, "What percentage did you get in your last exam?");
+		int lol
 		// If they scored more than 70, they passed the exam.
-		
+		if(lol>=70){
+		passedExam = true;
+		}
 		// Set the boolean passedExam based on their score.
 		
 		// If the user passed the exam, congratulate them
