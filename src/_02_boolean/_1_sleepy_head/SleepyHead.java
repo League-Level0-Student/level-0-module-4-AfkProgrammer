@@ -82,7 +82,7 @@ public class SleepyHead {
 		
 		boolean isSquare;		
 		// Now ask the user what shape to draw. Based on their answer, set the isSquare variable
-		
+		String shape = JOptionPane.showInputDialog(null, "What shape do you want drawn?");
 		
 		// Now you MUST use the && operator to join the booleans for this code. 
 		// Ask your teacher if you are not sure how
@@ -95,6 +95,15 @@ public class SleepyHead {
 	
 	static void drawRedSquare() {
 		Robot rob = new Robot();
-		// Complete the rest of this method
+		rob.setSpeed(1000);
+		rob.penDown();
+		rob.move(100);
+		rob.turn(90);
+		rob.move(100);
+		rob.turn(90);
+		rob.move(100);
+		rob.turn(90);
+		rob.move(100);
+		rob.turn(90);
 	}	
 }
