@@ -78,23 +78,39 @@ public class SleepyHead {
 		
 		boolean isRed;
 		// Ask the user what color to draw with. Based on their answer, set the isRed variable
-		String color = JOptionPane.showInputDialog(null, "What color do you want to draw with?");
+		String color = JOptionPane.showInputDialog(null, "What color do you want to draw with: Red, Green or Blue?");
 		
 		boolean isSquare;		
-		// Now ask the user what shape to draw. Based on their answer, set the isSquare variable
-		String shape = JOptionPane.showInputDialog(null, "What shape do you want drawn?");
 		
+		if(color.equalsIgnoreCase("red")) {
+			isRed = true;
+		}
+		// Now ask the user what shape to draw. Based on their answer, set the isSquare variable
+		String shape = JOptionPane.showInputDialog(null, "What shape do you want drawn: Square, Circle, or Triangle?");
+		
+		if(shape.equalsIgnoreCase("square")) {
+			isSquare = true;
+		}
 		// Now you MUST use the && operator to join the booleans for this code. 
 		// Ask your teacher if you are not sure how
 		// Use an if statement to ONLY draw a red square when it has been requested (use the method below)
 		// otherwise, tell the user you don't know how to draw that shape
 		
-
+		drawSquare(color);
 	}
-
 	
-	static void drawRedSquare() {
+	static void drawSquare(String color) {
 		Robot rob = new Robot();
+		if(color.equalsIgnoreCase("red")) {
+			rob.setPenColor(255,0,0);
+		}		
+		else if (color.equalsIgnoreCase("blue")) {
+			rob.setPenColor (0,0,255); 
+		}
+		else if   (color.equalsIgnoreCase("green")) {
+			rob.setPenColor(0,100,0);
+		}
+			
 		rob.setSpeed(1000);
 		rob.penDown();
 		rob.move(100);
@@ -106,4 +122,6 @@ public class SleepyHead {
 		rob.move(100);
 		rob.turn(90);
 	}	
+	
+	
 }
